@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +11,9 @@ import { RegisterComponent } from './main-screen/register/register.component';
 import { SubMainComponent } from './sub-main/sub-main.component';
 import { ViewComponent } from './sub-main/view/view.component';
 import { AddComponent } from './sub-main/add/add.component';
+import { AppRoutingModule } from './app-routing.module';
+import { GetValidationMessages } from './main-screen/login/validationMessages';
+import { LoginService } from './main-screen/login/login.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +25,9 @@ import { AddComponent } from './sub-main/add/add.component';
     AddComponent
   ],
   imports: [
-    BrowserModule,BrowserAnimationsModule,ReactiveFormsModule,HttpClientModule,FormsModule
+    BrowserModule, BrowserAnimationsModule, ReactiveFormsModule, HttpClientModule, FormsModule,AppRoutingModule
   ],
-  providers: [],
+  providers: [GetValidationMessages,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
