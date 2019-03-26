@@ -31,9 +31,26 @@
     border: 1px solid;
     padding: 15px;
 }
-.selected{
-    background:#a6ad85;
+
+.selected {
+    background: #a6ad85;
 }
-.unselected{
+
+.unselected {
     background: #606358;
+}
+
+.username {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+    margin-top: 30px;
+    font-weight: 700;
+    margin-left: 50%;
+}
+
+.logout {
+    font-size: 30px;
+}
+.block:hover{
+    cursor: pointer;
 }

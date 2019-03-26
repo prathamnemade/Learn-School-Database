@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sub-main',
@@ -7,20 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubMainComponent implements OnInit {
 
-  constructor() { }
-  toggleView:Boolean=false;
-  toggleAdd:Boolean=true;
+  constructor(private router: Router) { }
+  toggleView: Boolean = false;
+  toggleAdd: Boolean = true;
+  userName: string = ""
 
   ngOnInit() {
+    this.userName = sessionStorage.getItem('emailID')
   }
-  toggleTopics(topic){
-    if(topic=='add'){
-      this.toggleAdd=true;
-      this.toggleView=false;
-    }else{
-      this.toggleAdd=false;
-      this.toggleView=true;
+  toggleTopics(topic) {
+    if (topic == 'add') {
+      this.toggleAdd = true;
+      this.toggleView = false;
+    } else {
+      this.toggleAdd = false;
+      this.toggleView = true;
     }
 
+  }
+  logout() {
+    sessionStorage.removeItem('emailID')
+    this.router.navigate(['/home'])
   }
 }

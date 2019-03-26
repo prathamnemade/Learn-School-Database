@@ -11,7 +11,7 @@
       <form [formGroup]="userDetailsForm" (ngSubmit)="loginService.onSubmitUserDetails(userDetailsForm.value)">
         <div class=" rightRegisterBox">
           <div class="row">
-            <div class="ui-md-offset-2 ui-g-offset-2 ui-lg-offset-2 ui-g-1 col-md-1 col-lg-1">
+            <div class=" ui-g-1 col-md-1 col-lg-1">
               <span class="ui-inputgroup-addon"><i class="fa fa-at fa-2x"></i></span>
             </div>
             <div class="ui-g-6 col-md-6 col-lg-6"> <input type="email" formControlName="emailID" pInputText
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="ui-md-offset-2 ui-g-offset-2 ui-lg-offset-2 ui-g-1 col-md-1 col-lg-1">
+            <div class=" ui-g-1 col-md-1 col-lg-1">
               <span class="ui-inputgroup-addon"><i class="fa fa-unlock-alt fa-2x"></i></span>
             </div>
             <div class="ui-g-6 col-md-6 col-lg-6"><input type="password" pInputText placeholder="Password"
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="row">
-          <button class="btn btn-success">Login</button>
+          <button class="btn btn-success" [disabled]="!userDetailsForm.valid">Login</button>
         </div>
         <div class="row" >
           <a  routerLink="/register" routerLinkActive="active">wanna register??</a>

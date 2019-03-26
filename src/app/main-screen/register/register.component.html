@@ -57,8 +57,9 @@
             </div>
           </div>
           <div class="row">
-            <button class="btn btn-danger">Register</button>
+            <button class="btn btn-danger" [disabled]="!userRegisterForm.valid">Register</button>
           </div>
+          {{registerService.dataSaved}}
           <div class="row">
             <a routerLink="/home" routerLinkActive="active">wanna login??</a>
           </div>

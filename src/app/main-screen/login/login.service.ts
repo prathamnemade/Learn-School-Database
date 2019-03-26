@@ -12,7 +12,6 @@ export class LoginService {
     };
     url: string = CommonConstants.login;
     onSubmitUserDetails(formvalue) {
-        console.warn("login Form vakue", formvalue);
         this.checkUser(formvalue).subscribe((data) => {
             if (data == true) {
                 sessionStorage.setItem('emailID', formvalue.emailID)

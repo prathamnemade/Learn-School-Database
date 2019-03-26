@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, public validation_messages: GetValidationMessages,public registerService:RegisterService) { }
   ngOnInit() {
     this.formSkeleton()
+    this.registerService.dataSaved=""
   }
   formSkeleton() {
     this.userRegisterForm = new FormGroup({

@@ -5,24 +5,24 @@
       <div class="secondWord">School</div>
     </div>
     <div class="username pull-right">
-      Hi ,Username
+      Hi, {{userName}}.....
     </div>
     <div class="logout pull-right">
-      Logout
+      <button class="btn btn-danger" (click)="logout()">Logout</button>
     </div>
   </div>
   <div class="middle row">
-    <div class="midLeft ui-g-3 col-md-3 col-lg-3">
-      <div (click)="toggleTopics('add')" class="block">
-        <div [ngClass]="{'selected': toggleAdd, 'unselected': !toggleAdd}">Add Students</div>
-        <div *ngIf="toggleAdd">===></div>
+    <div class="midLeft ui-g-5 ui-md-3 ui-lg-3">
+      <div (click)="toggleTopics('add')" class="block" [ngClass]="{'selected': toggleAdd, 'unselected': !toggleAdd}">
+        <div >Add Students</div>
+        <!-- <div *ngIf="toggleAdd">Selected===></div> -->
       </div>
-      <div (click)="toggleTopics('view')" class="block">
-        <div [ngClass]="{'selected': toggleView, 'unselected': !toggleView}">View Students</div>
-        <div *ngIf="toggleView">===></div>
+      <div (click)="toggleTopics('view')" class="block" [ngClass]="{'selected': toggleView, 'unselected': !toggleView}">
+        <div >View Students</div>
+        <!-- <div *ngIf="toggleView">Selected===></div> -->
       </div>
     </div>
-    <div class="midRight ui-g-9 col-md-9 col-lg-9">
+    <div class="midRight ui-g-7 ui-md-9 ui-lg-9">
       <app-add *ngIf="toggleAdd"></app-add>
       <app-view *ngIf="toggleView"></app-view>
     </div>

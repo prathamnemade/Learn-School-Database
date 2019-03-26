@@ -6,12 +6,10 @@ module.exports.checkRegister = function (req, res) {
     })
   }
 module.exports.register = function (req, res) {
-    console.log("register");
-    
     var registration = new Registration()
     registration.email=req.body.emailID;
     registration.fullname=req.body.fullname;
     registration.password=req.body.password;
     registration.save()
-    res.json("Data Saved");
+    res.json("User Registered successfully!!");
 };

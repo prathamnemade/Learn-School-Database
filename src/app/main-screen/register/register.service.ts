@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators'
 @Injectable()
 export class RegisterService {
+    dataSaved:string="";
     constructor(private http: HttpClient) { }
     httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,12 +13,10 @@ export class RegisterService {
     url: string = CommonConstants.register;
     urlExistence: string = CommonConstants.registerExistence;
     onSubmitRegisterDetails(formvalue) {
-        console.warn("login Form vakue", formvalue);
         this.registerExistence(formvalue).subscribe((data) => {
-            console.warn("data existence", data);
             if (data == 0) {
                 this.registerUser(formvalue).subscribe((data1) => {
-                    console.warn("darta", data1);
+                    this.dataSaved=data1
                 })
             }
 

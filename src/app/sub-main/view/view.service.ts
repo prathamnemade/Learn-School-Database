@@ -15,7 +15,6 @@ export class ViewService {
     fetchData(){
         this.details().subscribe((data)=>
         {
-            console.warn(data);
             this.allItems=data;
             this.countOfRows=data.length;
             

@@ -2,8 +2,8 @@
   List of Students
 </div>
 <hr>
-<p-dataTable  [value]="viewService.allItems" [totalRecords]="viewService.countOfRows"
-  [rows]="7" [paginator]="true" [pageLinks]="5" scrollable="true" selectionMode="single" paginatorPosition="both">
+<p-dataTable [value]="viewService.allItems" [totalRecords]="viewService.countOfRows" [rows]="7" [paginator]="true"
+  [pageLinks]="5" scrollable="true" selectionMode="single" paginatorPosition="both">
   <p-headerColumnGroup>
     <p-row>
       <p-column [style]="{'width':'145px'}" header="Full Name" field="fullname"></p-column>
@@ -12,6 +12,14 @@
       <p-column [style]="{'width':'211px'}" field="class" header="Class"></p-column>
       <p-column [style]="{'width':'166px'}" field="division" header="Division"></p-column>
       <p-column [style]="{'width':'211px'}" field="status" header="Status"> </p-column>
+    </p-row>
+    <p-row>
+      <p-column field="fullname" [filter]="true" filterPlaceholder="Search"></p-column>
+      <p-column field="dob" [filter]="true" filterPlaceholder="Search"></p-column>
+      <p-column field="school" [filter]="true" filterPlaceholder="Search"></p-column>
+      <p-column field="class" [filter]="true" filterPlaceholder="Search"></p-column>
+      <p-column field="division" [filter]="true" filterPlaceholder="Search"></p-column>
+      <p-column field="status" [filter]="true" filterPlaceholder="Search"></p-column>
     </p-row>
   </p-headerColumnGroup>
   <p-column [style]="{'width':'145px'}" field="fullname"></p-column>

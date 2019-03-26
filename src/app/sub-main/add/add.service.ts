@@ -48,7 +48,6 @@ export class AddService {
     addDetails() {
         this.details({ fullname: this.fullname, birthday: this.birthday, selectedSchool: this.selectedSchool, selectedClass: this.selectedClass, selectedDivision: this.selectedDivision, selectedStatus: this.selectedStatus })
             .subscribe((data) => {
-                console.warn(data);
                 this.responseAdd = data
             }
             )
