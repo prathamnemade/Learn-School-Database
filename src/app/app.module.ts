@@ -14,6 +14,16 @@ import { AddComponent } from './sub-main/add/add.component';
 import { AppRoutingModule } from './app-routing.module';
 import { GetValidationMessages } from './main-screen/login/validationMessages';
 import { LoginService } from './main-screen/login/login.service';
+import { RegisterService } from './main-screen/register/register.service';
+
+
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import {DataTableModule} from 'primeng/datatable';
+import { AddService } from './sub-main/add/add.service';
+import { ViewService } from './sub-main/view/view.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,10 +34,10 @@ import { LoginService } from './main-screen/login/login.service';
     ViewComponent,
     AddComponent
   ],
-  imports: [
-    BrowserModule, BrowserAnimationsModule, ReactiveFormsModule, HttpClientModule, FormsModule,AppRoutingModule
+  imports: [InputTextModule, CalendarModule, DropdownModule, RadioButtonModule,DataTableModule,
+    BrowserModule, BrowserAnimationsModule, ReactiveFormsModule, HttpClientModule, FormsModule, AppRoutingModule
   ],
-  providers: [GetValidationMessages,LoginService],
+  providers: [ViewService,AddService, GetValidationMessages, LoginService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,37 @@
+p-calendar .ui-datepicker {
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+p-calendar .ui-datepicker-month, p-calendar .ui-datepicker-year {
+    border: 0;
+    border-radius: 20px;
+}
+
+p-dropdown {
+    border-bottom: 1px solid;
+    padding: 5px;
+}
+
+p-dropdown div.ui-dropdown-panel div.ui-dropdown-items-wrapper {
+    background: lightgray;
+}
+
+p-radiobutton {
+    background: bisque;
+    margin: 5px;
+}
+/* 
+
+p-dropdown div.ui-dropdown-panel div.ui-dropdown-items-wrapper ul p-dropdownitem li:nth-child(even){
+    background: blue;
+} */
+
+.done{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    color: red !important;
+}
+.addheader{
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+}

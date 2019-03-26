@@ -1,0 +1,39 @@
+.header {
+    display: inline-flex;
+}
+
+.firstWord, .secondWord {
+    display: inline;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 58px;
+}
+
+.firstWord {
+    background: yellow;
+}
+
+.secondWord {
+    background: green;
+}
+
+.midLeft {
+    height: -webkit-fill-available;
+    border-right: 1px solid;
+    height: 100vh;
+    text-align: center;
+}
+
+.midRight {
+    height: 100vh;
+}
+
+.block {
+    border: 1px solid;
+    padding: 15px;
+}
+.selected{
+    background:#a6ad85;
+}
+.unselected{
+    background: #606358;
+}

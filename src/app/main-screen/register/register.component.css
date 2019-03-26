@@ -50,7 +50,7 @@ a {
 
 .error-message {
     color: red;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .header {
@@ -61,4 +61,11 @@ a {
 input {
     width: 100%;
     border: 0;
+}
+
+.errorBlock{
+    border: 1px solid;
+    position: absolute;
+    margin-left: 414px;
+    width: 42%;
 }

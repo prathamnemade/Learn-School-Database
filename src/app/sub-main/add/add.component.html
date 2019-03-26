@@ -1,3 +1,72 @@
-<p>
-  add works!
-</p>
+<div class="addheader">
+  Add Student
+</div>
+<hr>
+<br>
+<div class="row pull-right" [hidden]="!addService.responseAdd">
+  <button (click)="addService.addNew()" class="btn btn-danger" >Add New</button>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-3 ui-g-3 ui-lg-3 ui-g-3 ui-lg-3">
+    Full Name
+  </div>
+  <div class="col-md-5 ui-g-5 ui-lg-5">
+    <input placeholder="Enter your name" [(ngModel)]="addService.fullname" id="float-input" type="text" size="30"
+      pInputText>
+  </div>
+</div><br>
+<div class="row">
+  <div class="col-md-3 ui-g-3 ui-lg-3">
+    Date of Birth
+  </div>
+  <div class="col-md-5 ui-g-5 ui-lg-5">
+    <p-calendar placeholder="Birthdate" [(ngModel)]="addService.birthday"></p-calendar>
+  </div>
+</div><br>
+<div class="row">
+  <div class="col-md-3 ui-g-3 ui-lg-3">
+    School
+  </div>
+  <div class="col-md-5 ui-g-5 ui-lg-5">
+    <p-dropdown [options]="addService.schools" [(ngModel)]="addService.selectedSchool" placeholder="Select a School"
+      optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
+</div><br>
+<div class="row">
+  <div class="col-md-3 ui-g-3 ui-lg-3">
+    Class
+  </div>
+  <div class="col-md-5 ui-g-5 ui-lg-5">
+    <p-dropdown [options]="addService.classes" [(ngModel)]="addService.selectedClass" placeholder="Select a Class"
+      optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
+</div><br>
+<div class="row">
+  <div class="col-md-3 ui-g-3 ui-lg-3">
+    Division
+  </div>
+  <div class="col-md-5 ui-g-5 ui-lg-5">
+    <p-dropdown [options]="addService.divisions" [(ngModel)]="addService.selectedDivision"
+      placeholder="Select a Divison" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
+</div><br>
+<div class="row">
+  <div class="col-md-3 ui-g-3 ui-lg-3">
+    Status
+  </div>
+  <div class="col-md-5 ui-g-5 ui-lg-5">
+    <p-radioButton name="Active" value="Active" [(ngModel)]="addService.selectedStatus" inputId="Active">
+    </p-radioButton>Active
+    <p-radioButton name="Inactive" value="Inactive" [(ngModel)]="addService.selectedStatus" inputId="Inactive">
+    </p-radioButton>Inactive
+  </div>
+</div><br>
+<div>
+  <button (click)="addService.addDetails()" type="submit" class="btn btn-success" [disabled]="!(addService.fullname && addService.birthday && addService.schools &&
+  addService.classes && addService.divisions && addService.selectedStatus)">Submit</button>
+</div>
+<div class="row" *ngIf="addService.responseAdd">
+  <a class="done">Done!!!</a>
+ 
+</div>

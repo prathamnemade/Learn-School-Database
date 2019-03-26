@@ -1,3 +1,30 @@
-<p>
-  sub-main works!
-</p>
+<div>
+  <div class="header">
+    <div class="logoHeader">
+      <div class="firstWord">Learn</div>
+      <div class="secondWord">School</div>
+    </div>
+    <div class="username pull-right">
+      Hi ,Username
+    </div>
+    <div class="logout pull-right">
+      Logout
+    </div>
+  </div>
+  <div class="middle row">
+    <div class="midLeft ui-g-3 col-md-3 col-lg-3">
+      <div (click)="toggleTopics('add')" class="block">
+        <div [ngClass]="{'selected': toggleAdd, 'unselected': !toggleAdd}">Add Students</div>
+        <div *ngIf="toggleAdd">===></div>
+      </div>
+      <div (click)="toggleTopics('view')" class="block">
+        <div [ngClass]="{'selected': toggleView, 'unselected': !toggleView}">View Students</div>
+        <div *ngIf="toggleView">===></div>
+      </div>
+    </div>
+    <div class="midRight ui-g-9 col-md-9 col-lg-9">
+      <app-add *ngIf="toggleAdd"></app-add>
+      <app-view *ngIf="toggleView"></app-view>
+    </div>
+  </div>
+</div>

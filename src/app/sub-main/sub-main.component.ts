@@ -8,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class SubMainComponent implements OnInit {
 
   constructor() { }
+  toggleView:Boolean=false;
+  toggleAdd:Boolean=true;
 
   ngOnInit() {
   }
+  toggleTopics(topic){
+    if(topic=='add'){
+      this.toggleAdd=true;
+      this.toggleView=false;
+    }else{
+      this.toggleAdd=false;
+      this.toggleView=true;
+    }
 
+  }
 }

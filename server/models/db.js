@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb://login:login123@ds123196.mlab.com:23196/learnschool';
-mongoose.connect(dbURI,{ useNewUrlParser: true });
+var dbURI = 'mongodb://learnschool:learnschool123@ds123196.mlab.com:23196/learnschool';
+mongoose.connect(dbURI,{ useNewUrlParser: true,useCreateIndex: true, });
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
@@ -13,6 +13,5 @@ mongoose.connection.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
 
-
-require('./login');
+require('./add')
 require('./register');

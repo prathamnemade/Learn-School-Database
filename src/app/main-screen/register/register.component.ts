@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { GetValidationMessages } from '../login/validationMessages';
+import { RegisterService } from './register.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  userDetailsForm: FormGroup;
+  userRegisterForm: FormGroup;
   account_validation_messages = this.validation_messages.account_validation_messages
-  constructor(private formBuilder: FormBuilder, public validation_messages: GetValidationMessages) { }
+  constructor(private formBuilder: FormBuilder, public validation_messages: GetValidationMessages,public registerService:RegisterService) { }
   ngOnInit() {
     this.formSkeleton()
   }
   formSkeleton() {
-    this.userDetailsForm = new FormGroup({
+    this.userRegisterForm = new FormGroup({
       'fullName': new FormControl('', Validators.compose([
         Validators.maxLength(25),
         Validators.required

@@ -1,3 +1,23 @@
-<p>
-  view works!
-</p>
+<div class="listheader">
+  List of Students
+</div>
+<hr>
+<p-dataTable  [value]="viewService.allItems" [totalRecords]="viewService.countOfRows"
+  [rows]="7" [paginator]="true" [pageLinks]="5" scrollable="true" selectionMode="single" paginatorPosition="both">
+  <p-headerColumnGroup>
+    <p-row>
+      <p-column [style]="{'width':'145px'}" header="Full Name" field="fullname"></p-column>
+      <p-column [style]="{'width':'145px'}" field="dob" header="Date of Birth"> </p-column>
+      <p-column [style]="{'width':'211px'}" field="school" header="School"> </p-column>
+      <p-column [style]="{'width':'211px'}" field="class" header="Class"></p-column>
+      <p-column [style]="{'width':'166px'}" field="division" header="Division"></p-column>
+      <p-column [style]="{'width':'211px'}" field="status" header="Status"> </p-column>
+    </p-row>
+  </p-headerColumnGroup>
+  <p-column [style]="{'width':'145px'}" field="fullname"></p-column>
+  <p-column [style]="{'width':'145px'}" field="dob"> </p-column>
+  <p-column [style]="{'width':'211px'}" field="school"> </p-column>
+  <p-column [style]="{'width':'211px'}" field="class"></p-column>
+  <p-column [style]="{'width':'166px'}" field="division"></p-column>
+  <p-column [style]="{'width':'211px'}" field="status"> </p-column>
+</p-dataTable>

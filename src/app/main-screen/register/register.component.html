@@ -9,7 +9,8 @@
         <div class="header">
           Create a new Account
         </div>
-        <form [formGroup]="userDetailsForm" (ngSubmit)="loginService.onSubmitUserDetails(userDetailsForm.value)">
+        <form [formGroup]="userRegisterForm"
+          (ngSubmit)="registerService.onSubmitRegisterDetails(userRegisterForm.value)">
           <div class=" rightRegisterBox">
             <div class="row">
               <div class="ui-md-offset-1 ui-g-offset-1 ui-lg-offset-1 ui-g-1 col-md-1 col-lg-1">
@@ -21,7 +22,7 @@
               <div class="ui-g-5 col-md-5 col-lg-5">
                 <div *ngFor="let validation of account_validation_messages.fullName">
                   <div class="error-message"
-                    *ngIf="userDetailsForm.get('fullName').hasError(validation.type) && (userDetailsForm.get('fullName').dirty || userDetailsForm.get('fullName').touched)">
+                    *ngIf="userRegisterForm.get('fullName').hasError(validation.type) && (userRegisterForm.get('fullName').dirty || userRegisterForm.get('fullName').touched)">
                     {{validation.message}}</div>
                 </div>
               </div>
@@ -35,7 +36,7 @@
               <div class="ui-g-5 col-md-5 col-lg-5">
                 <div *ngFor="let validation of account_validation_messages.emailID">
                   <div class="error-message"
-                    *ngIf="userDetailsForm.get('emailID').hasError(validation.type) && (userDetailsForm.get('emailID').dirty || userDetailsForm.get('emailID').touched)">
+                    *ngIf="userRegisterForm.get('emailID').hasError(validation.type) && (userRegisterForm.get('emailID').dirty || userRegisterForm.get('emailID').touched)">
                     {{validation.message}}</div>
                 </div>
               </div>
@@ -49,7 +50,7 @@
               <div class="ui-g-5 col-md-5 col-lg-5">
                 <div *ngFor="let validation of account_validation_messages.password">
                   <div class="error-message"
-                    *ngIf="userDetailsForm.get('password').hasError(validation.type) && (userDetailsForm.get('password').dirty || userDetailsForm.get('password').touched)">
+                    *ngIf="userRegisterForm.get('password').hasError(validation.type) && (userRegisterForm.get('password').dirty || userRegisterForm.get('password').touched)">
                     {{validation.message}}</div>
                 </div>
               </div>
