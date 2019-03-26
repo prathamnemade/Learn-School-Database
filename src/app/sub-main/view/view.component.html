@@ -2,8 +2,14 @@
   List of Students
 </div>
 <hr>
-<p-dataTable [value]="viewService.allItems" [totalRecords]="viewService.countOfRows" [rows]="7" [paginator]="true"
+<p-dataTable [value]="viewService.allItems" [totalRecords]="viewService.countOfRows" [rows]="7" #dt [paginator]="true"
   [pageLinks]="5" scrollable="true" selectionMode="single" paginatorPosition="both">
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <button type="button" class="ui-button-warning" pButton icon="fa fa-file-o" iconPos="left" label="Export all(Excel)" (click)="dt.exportCSV()"
+        style="float:left"></button>
+    </div>
+  </p-header>
   <p-headerColumnGroup>
     <p-row>
       <p-column [style]="{'width':'145px'}" header="Full Name" field="fullname"></p-column>

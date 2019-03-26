@@ -2,4 +2,7 @@
     font-family: "Courier New", Courier, monospace;
     font-size: 30px;
 }
+.ui-button-warning{
+    background: yellow;
+}
 
