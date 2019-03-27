@@ -16,7 +16,12 @@ const appRoutes: Routes = [
   {
     path: "dashboard",
     component: SubMainComponent,canActivate: [AuthGuard]
-  }
+  },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: "**",
+    component: MainScreenComponent
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
